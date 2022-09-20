@@ -38,10 +38,20 @@ p {
     display: none;
 }
 
-.only__mobile-heading {
-    font-size: 1.625rem;
+.only-heading {
+    padding-left: 1rem;
+    font-size: 2.25rem;
+    line-height: 1.27;
     font-family: sans-serif;
-    line-height: 1.15;
+    color: #131313;
+    font-weight: 700;
+}
+
+.only__mobile-heading {
+    padding-left: calc(50% - 630px);
+    font-size: 2.25rem;
+    line-height: 1.27;
+    font-family: sans-serif;
     color: #131313;
     font-weight: 700;
 }
@@ -345,6 +355,19 @@ p {
 
     .only__mobile {
         display: inline-block;
+    }
+
+    .only-heading {
+        display: none;  
+    }
+
+    .only__mobile-heading {
+        padding-left: 0;
+        font-size: 1.625rem;
+        line-height: 1.15;
+        font-family: sans-serif;
+        color: #131313;
+        font-weight: 700;
     }
 
     .accordions__wrapper {
