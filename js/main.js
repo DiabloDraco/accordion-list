@@ -1,4 +1,8 @@
 let accordion = document.querySelectorAll(".accordion__item")
+let elModal = document.querySelector(".accordion__main-wrapper")
+let elActive = document.querySelector(".activator")
+let elCross = document.querySelector(".according__cross")
+
 
 accordion.forEach(item => 
     item.addEventListener("click" , function () {
@@ -12,3 +16,11 @@ accordion.forEach(item =>
         }
     })
 )
+
+elActive.addEventListener("click" , function () {
+    elModal.classList.add("accordion__main-wrapper-active")
+})
+
+elCross.addEventListener("click" , function () {
+    elModal.classList.remove("accordion__main-wrapper-active")
+})
