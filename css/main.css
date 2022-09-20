@@ -33,6 +33,11 @@ p {
     margin: 0;
     background-color: #f6f6f6;
 }
+
+.only__mobile {
+    display: none;
+}
+
 .only__mobile-heading {
     font-size: 1.625rem;
     font-family: sans-serif;
@@ -337,6 +342,10 @@ p {
 
 @media only screen and (max-width: 640px) {
     /* MOBILE */
+
+    .only__mobile {
+        display: inline-block;
+    }
 
     .accordions__wrapper {
         display: flex;
