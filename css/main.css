@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+}
+
+* ::after , ::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.container {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.accordions__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.accordions__list {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin-top: .5em;
+    gap: 8px;
+}
+.accordion__item {
+    display: flex;
+    cursor: pointer;
+    width: 100%;
+}
+.accordion__heading {
+    color: #869199;
+    font-family: sans-serif;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    padding: 1.375rem 1rem 0 0;
+    flex: 0 0 232px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 0;
+}
+
+.accordion__trigger-wrapper {
+    max-width: 1048px;
+    display: flex;
+    flex-direction: column;
+    background-color: #f6f6f6;
+    transition: all .3s ease;
+    position: relative;
+    width: 100%;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+}
+
+.accordion__trigger-wrapper::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 16px;
+    top: 32.7px;
+    right: 2rem;
+    background-color: #fd5432;
+}
+
+.accordion__trigger-wrapper::before {
+    position: absolute;
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: calc(100% + 2px);
+    top: -1px;
+    background-color: #fd5432;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+}
+
+.accordion__item:hover .accordion__trigger-wrapper {
+    background-color: transparent;
+    border-top: 1px solid #cfd7dd;
+    border-bottom: 1px solid #cfd7dd;
+}
+
+.accordion__item:hover .accordion__trigger-wrapper::before {
+    transform: scaleX(1);
+}
+
+.accordion__top {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 4rem 1.5rem 1.75rem;
+}
+.accordion__top-num {
+    font-size: 1rem;
+    line-height: 1.25;
+    flex: 0 0 8.125rem;
+    font-weight: 700;
+    color: #869199;
+    margin: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: sans-serif;
+    vertical-align: baseline;
+}
+.accordion__top-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #131313;
+    vertical-align: baseline;
+    line-height: 1.2;
+    cursor: pointer;
+    margin: 0;
+}
+
+.accordion__top-heading::after {
+    position: absolute;
+    content: "";
+    height: 4px;
+    width: 16px;
+    top: 33px;
+    right: 2rem;
+    background-color: #fd5432;
+    transition: all .5s ease;
+    transform: rotate(90deg) scale(1);
+}
+
+.accordion__bottom {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+}
+.accordion__bottom-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+    gap: .625rem;
+}
+.accordion__bottom-item {
+    font-size: .875rem;
+    color: #131313;
+    padding-left: 1rem;
+    position: relative;
+    vertical-align: baseline;
+
+}
+
+.accordion__bottom-item::before {
+    position: absolute;
+    content: "-";
+    font-weight: 700;
+    left: 0;
+    transform: scaleX(2);
+}
+
+
+.accordion__item:hover .accordion__heading{
+    color: #fd5432; 
+}
+
+.accordion__item:hover .accordion__top-num{
+    color: #fd5432; 
+}
+
+
+.active .accordion__trigger-wrapper {
+    background-color: transparent;
+    border-top: 1px solid #cfd7dd;
+    border-bottom: 1px solid #cfd7dd;
+}
+
+.active .accordion__trigger-wrapper::before {
+    transform: scaleX(1);
+}
+
+.active .accordion__top-heading::after{
+    transform: none;
+}
+
+.active .accordion__bottom {
+    max-height: 1000px;
+    padding: .5rem 4rem 2.5rem 9.875rem;
+    opacity: 1;
+}
+
+.active .accordion__heading{
+    color: #fd5432; 
+}
+
+.active .accordion__top-num{
+    color: #fd5432; 
+}
